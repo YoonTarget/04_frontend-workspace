@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>영역관련태그</title>
+</head>
+<body>
+    <!--
+        블럭요소 : 한 줄 단위로 영역을 차지함
+                  줄바꿈이 적용되어 이미 존재하는 태그의 다음줄에 영역이 잡힘
+                  (p, pre, "div", ...)
+
+        인라인요소 : content(내용) 영역에 해당하는 부분만 영역을 차지하는 요소
+                    줄바꿈이 적용되지 않아 옆으로 영역이 잡힘
+                    (다음 줄로 넘기고자 한다면 직접 br 태그 작성해야함)
+                    (b, mark, s, img, "span", ...)
+    -->
+
+    <h1>영역 관련 태그</h1>
+
+    <h2>div 태그와 span 태그의 차이점1 : 줄바꿈 적용 유무</h2>
+
+    <h3>div 태그</h3>
+    <p>div 태그는 블럭요소로 한 줄 단위로 영역을 차지 (이미 존재하는 태그 다음줄에 영역이 잡힘)</p>
+
+    <div style="background-color: red;">첫번째 영역</div>
+    <div style="background-color: orange;">두번째 영역</div>
+    <div style="background-color: yellow;">세번째 영역</div>
+
+    <h3>span 태그</h3>
+    <p>span 태그는 인라인 요소로 content 영역만 차지 (줄바꿈이 발생되지 않고 옆으로 영역이 잡힘)</p>
+
+    <span style="background-color: green;">첫번째 영역</span>
+    <span style="background-color: blue;">두번째 영역</span>
+    <span style="background-color: purple;">세번째 영역</span>
+
+    <hr>
+
+    <h2>div 태그와 span 태그의 차이점2 : 영역을 지정하는 방식</h2>
+
+    <h3>div 태그 : 사각형 박스로 영역을 지정</h3>
+
+    <div style="background-color: aqua;">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. <br>
+        Voluptas, cum natus similique voluptatum nihil accusantium perferendis ullam eum mollitia quam repudiandae neque minima eligendi ducimus quos iste quisquam saepe laboriosam?
+    </div>
+
+    <h3>span 태그 : 문장단위로 영역을 지정</h3>
+    
+    <span style="background-color: aqua;">
+        이름자 자랑처럼 언덕 이런 쓸쓸함과 가난한 나의 거외다. 
+        마디씩 내 별 나는 불러 헤일 언덕 오면 잔디가 듯합니다. 
+        벌써 슬퍼하는 너무나 어머님, 멀리 봅니다. 
+        별 하나의 무덤 보고, 계집애들의 어머니 별 다 이름을 거외다. 
+        아직 다 이제 말 하나에 벌써 듯합니다. <br>
+        별 이름을 당신은 새워 아직 하나에 위에 북간도에 없이 까닭입니다. 
+        소학교 밤이 언덕 아침이 보고, 위에 까닭입니다. 
+        하나에 이름자 풀이 당신은 듯합니다. 
+        사람들의 속의 까닭이요, 경, 나의 오면 까닭입니다. 
+        멀듯이, 프랑시스 가슴속에 거외다. 
+        사랑과 별 위에 북간도에 잔디가 내일 쉬이 까닭입니다.
+    </span>
+
+    <hr>
+
+    <h1>iframe</h1>
+    <p>웹 문서 안에 다른 웹 페이지를 추가하는 태그 (인라인 요소)</p>
+    <iframe src="04_이미지및멀티미디어관련태그.html" width="600" height="800"></iframe>
+
+    <iframe width="1264" height="711" src="https://www.youtube.com/embed/WrNbkZXMENo" title="끝없는 수다삼매경" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+</body>
+</html>
