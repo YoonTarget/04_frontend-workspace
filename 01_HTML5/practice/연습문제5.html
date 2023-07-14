@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>연습문제5</title>
+</head>
+<body>
+    <form action="practice.do">
+        <fieldset>
+            <legend>납품자 정보</legend>
+            <br>
+            <ol>
+                <table>
+                    <tr>
+                        <td>
+                            <li>납품자명 : <input type="text" name="name" placeholder="name"></li>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <li>email : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="email" placeholder="answs@naver.com"></li>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <li>홈페이지 : <input type="url" name="homepage" placeholder="http://"></li>
+                        </td>
+                        <td></td>
+                    </tr>
+                </table>
+            </ol>
+        </fieldset>
+        
+        <fieldset>
+            <legend>납품정보</legend>
+            <ul>
+                <li>상품명 : <input type="text" name="productName"></li> <br>
+                <li>납품수량 : <input type="text" name="amount" placeholder="최소 100"></li> <br>
+                <li>납품등급 : <input type="range" name="level" min="0" max="5"></li> <br>
+                <li>기타사항 : <textarea name="etc"></textarea></li>
+            </ul>
+        </fieldset>
+
+        <br>
+
+        <input type="submit" value="send message">
+    </form>
+</body>
+</html>
