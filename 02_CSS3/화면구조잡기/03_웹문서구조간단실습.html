@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹 문서 구조 간단실습</title>
+    <style>
+        div {
+            box-sizing: border-box;
+            padding: 0.5%;
+        }
+        .wrap {
+            width: 1000px;
+            height: 800px;
+            margin: auto;
+            border: 3px solid brown;
+        }
+        .wrap>div {
+            width: 100%;
+            border: 3px solid red;
+        }
+        #header, #footer {
+            height: 20%;
+        }
+        #content {
+            height: 59%;
+            margin-top: 0.5%;
+            margin-bottom: 0.5%;
+        }
+
+        #header>div {
+            height: 100%;
+            float: left;
+            border: 3px solid blue;
+        }
+        #header_1 {
+            width: 29.7%;
+            margin-right: 0.3%;
+        }
+        #header_2 {
+            width: 69.7%;
+            margin-left: 0.3%;
+        }
+
+        #content>div {
+            height: 100%;
+            float: left;
+            border: 3px solid blue;
+        }
+        #content_1, #content_3 {
+            width: 20%;
+        }
+        #content_2 {
+            width: 59%;
+            margin-left: 0.5%;
+            margin-right: 0.5%;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div id="header">
+            <div id="header_1"></div>
+            <div id="header_2"></div>
+        </div>
+        <div id="content">
+            <div id="content_1"></div>
+            <div id="content_2"></div>
+            <div id="content_3"></div>
+        </div>
+        <div id="footer"></div>
+    </div>
+</body>
+</html>
