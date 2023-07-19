@@ -3,66 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>웹 문서 구조 간단실습</title>
+    <title>웹 문서 구조 상세</title>
     <style>
         div {
+            border: 1px solid red;
             box-sizing: border-box;
-            padding: 0.3%;
         }
         .wrap {
             width: 1000px;
             height: 800px;
             margin: auto;
-            border: 3px solid brown;
         }
+
+        /* 공통특성 가로 길이 100프로 */
         .wrap>div {
             width: 100%;
-            border: 3px solid red;
         }
         #header, #footer {
             height: 20%;
         }
+        #navigator {
+            height: 5%;
+        }
         #content {
-            height: 59.6%;
-            margin-top: 0.2%;
-            margin-bottom: 0.2%;
+            height: 55%;
         }
 
-        #header>div {
+        #header>div, #content>div {
             height: 100%;
             float: left;
-            border: 3px solid blue;
         }
         #header_1 {
-            width: 29.6%;
-            margin-right: 0.4%;
-        }
-        #header_2 {
-            width: 70%;
-        }
-
-        #content>div {
-            height: 100%;
-            float: left;
-            border: 3px solid blue;
-        }
-        #content_1, #content_3 {
             width: 20%;
         }
-        #content_2 {
-            width: 59.4%;
-            margin-left: 0.3%;
-            margin-right: 0.3%;
+        #header_2 {
+            width: 65%;
+        }
+        #header_3 {
+            width: 15%;
         }
 
+        #content_1 {
+            width: 15%;
+        }
+        #content_2 {
+            width: 60%;
+        }
+        #content_3 {
+            width: 25%;
+        }
+        
     </style>
 </head>
 <body>
+
     <div class="wrap">
         <div id="header">
             <div id="header_1"></div>
             <div id="header_2"></div>
+            <div id="header_3"></div>
         </div>
+        <div id="navigator"></div>
         <div id="content">
             <div id="content_1"></div>
             <div id="content_2"></div>
@@ -70,5 +71,6 @@
         </div>
         <div id="footer"></div>
     </div>
+
 </body>
 </html>

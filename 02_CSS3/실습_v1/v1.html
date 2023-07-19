@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v1</title>
+    <style>
+        /* 전체 div에 적용될 style */
+        div {
+            box-sizing: border-box;
+            /* border: 1px solid darkgreen; */
+        }
+        /* 전체를 감싸는 외부 div의 크기 지정 */
+        .wrap {
+            width: 1000px;
+            height: 800px;
+            margin: auto;
+        }
+        /* .wrap의 자식 태그들의 크기 지정 */
+        .wrap>div {
+            width: 100%;
+        }
+        #header, #footer {
+            height: 15%;
+        }
+        #content {
+            height: 60%;
+        }
+        #navigator {
+            height: 5%;
+        }
+        /* header, content, footer별로 크기 지정 */
+        /* header 태그 */
+        #header>div {
+            height: 100%;
+            float: left;
+        }
+        #header_1, #header_3 {
+            width: 20%;
+        }
+        #header_2 {
+            width: 60%;
+        }
+        #header_1 > div {
+            height: 100%;
+            text-align: right;
+            padding-top: 10px;
+        }
+        #header_1 img {
+            width: 70%;
+        }
+        #header_2 > div {
+            /* border: 1px solid red; */
+            padding-top: 30px;
+            padding-left: 50px;
+        }
+        /* content 태그 */
+        #content>div {
+            height: 100%;
+            float: left;
+        }
+        #content_1 {
+            width: 15%;
+        }
+        #content_2 {
+            width: 60%;
+        }
+        #content_3 {
+            width: 25%;
+        }
+
+        /* header 꾸미기 */
+        #header_1>img, #header_2>img {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* navigator 꾸미기 */
+        #navigator {
+            background-color: rgb(70, 182, 70);
+        }
+        #navi {
+            /* border: 1px solid red; */
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            height: 100%;
+        }
+        #navi>li {
+            float: left;
+            /* border: 1px solid blue; */
+            width: 24%;
+            height: 100%;
+            text-align: center;
+        }
+        #navi a {
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            width: 100%;
+            height: 100%;
+            line-height: 30px;
+        }
+        
+        /* content 꾸미기 */
+        #content_1 {
+            padding: 5px 5px 0 0;
+        }
+        #content_1>div {
+            /* border: 1px solid red; */
+            width: 100%;
+            height: 100%;
+        }
+        #content_1 img {
+            width: 100%;
+            height: 100%;
+        }
+        #content_2>div {
+            float: left;
+            width: 50%;
+            height: 50%;
+            /* border: 1px solid red; */
+            padding: 10px;
+        }
+        #content_2 img {
+            /* border: 1px solid blue; */
+            width: 100%;
+            height: 90%;
+        }
+        #content_2 p {
+            text-align: center;
+            margin-top: 0;
+        }
+        #content_3 > div {
+            /* border: 1px solid red; */
+            width: 100%;
+            padding: 5px;
+        }
+        #login, #chat {
+            height: 25%;
+        }
+        #ad {
+            height: 50%;
+        }
+        #content_3 img {
+            width: 100%;
+            height: 100%;
+        }
+        form {
+            /* border: 1px solid red; */
+            height: 60%;
+        }
+        form>div {
+            /* border: 1px solid red; */
+            float: left;
+            height: 100%;
+        }
+        #idPwd {
+            width: 70%;
+        }
+        #btn {
+            width: 30%;
+            padding: 5px 2px 5px 15px;
+        }
+        #idPwd > input, #btn > input {
+            /* border: 1px solid blue; */
+            width: 100%;
+        }
+        #btn > input {
+            height: 100%;
+            cursor: pointer;
+        }
+        #idPwd > input {
+            height: 44%;
+        }
+
+        #loginEtc {
+            /* border: 1px solid red; */
+            height: 40%;
+        }
+        #etc>li {
+            /* border: 1px solid red; */
+            list-style-type: none;
+            float: left;
+            margin: 10px;
+            margin-top: 0;
+            line-height: 0px;
+        }
+        #etc a {
+            /* border: 1px solid red; */
+            text-decoration: none;
+            color: rgb(66, 63, 63);
+            font-size: 12px;
+        }
+        
+        
+
+        
+        
+
+        /* footer 꾸미기 */
+        #footer>div {
+            /* border: 1px solid red; */
+            width: 100%;
+            height: 100%;
+        }
+        #footer img {
+            /* border: 1px solid blue; */
+            width: 100%;
+            height: 80%;
+            margin-top: 30px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div id="header">
+            <div id="header_1">
+                <div><img src="image/logo.jpg"></div>
+            </div>
+            <div id="header_2">
+                <div><img src="image/mainlogo.jpg"></div>
+            </div>
+            <div id="header_3"></div>
+        </div>
+        <div id="navigator">
+            <ul id="navi">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Board</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div id="content">
+            <div id="content_1">
+                <div>
+                    <img src="image/left_img.jpg">
+                </div>
+            </div>
+            <div id="content_2">
+                <div>
+                    <img src="image/main_img1.jpg">
+                    <p>나무를 심는 사람들</p>
+                </div>
+                <div>
+                    <img src="image/main_img2.jpg">
+                    <p>아이들에게 녹색미래를..</p>
+                </div>
+                <div>
+                    <img src="image/main_img3.jpg">
+                    <p>설악산을 살리는 길</p>
+                </div>
+                <div>
+                    <img src="image/main_img4.jpg">
+                    <p>사라지는 북극곰들</p>
+                </div>
+            </div>
+            <div id="content_3">
+                <div id="login">
+                    <form action="#" id="loginForm">
+                        <div id="idPwd">
+                            <input type="text" name="userId" placeholder="ID를 입력하세요." required>
+                            <input type="password" name="userPwd" placeholder="PW를 입력하세요." required>
+                        </div>
+                        <div id="btn">
+                            <input type="submit" value="로그인">
+                        </div>
+                    </form>
+                    <div id="loginEtc">
+                        <ul id="etc">
+                            <li><a href="#">회원가입</a></li>
+                            <li><a href="#">ID/PW 찾기</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="ad">
+                    <img src="image/right_img.jpg">
+                </div>
+                <div id="chat">
+                    <img src="image/me_chat.jpg">
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div><img src="image/footer.JPG"></div>
+        </div>
+    </div>
+</body>
+</html>
