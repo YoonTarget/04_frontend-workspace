@@ -6,7 +6,7 @@
     <title>웹 문서 구조 상세</title>
     <style>
         div, form, input {
-            /* border: 1px solid red; */
+            border: 1px solid red;
             box-sizing: border-box;
         }
         .wrap {
@@ -14,12 +14,17 @@
             height: 800px;
             margin: auto;
         }
+        #footer {
+            width: 1000px;
+            height: 150px; /* 임시로 지정 : 이 스타일 안 가져갈거임 */
+            margin-top: 10px;
+        }
 
         /* 공통특성 가로 길이 100프로 */
         .wrap>div {
             width: 100%;
         }
-        #header, #footer {
+        #header {
             height: 20%;
         }
         #navigator {

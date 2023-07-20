@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0720복습용페이지</title>
+    <style>
+        #box {
+            border: 1px solid black;
+            width: 400px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h3>박스에 안에 문구 넣기</h3>
+    <div id="box"></div>
+    <button id="btn" onclick="inputText();">눌루</button>
+
+    <h3>입력한 숫자만큼의 리스트 생성</h3>
+    <button onclick="makeNum();">숫자 생성기</button>
+    <ol id="test"></ol>
+
+    <script>
+        function inputText() {
+
+            let box = document.querySelector("#box");
+
+            if(box.innerHTML == "눌루") {
+                box.innerHTML = "안눌루";
+            }
+            else {
+                box.innerHTML = "눌루";
+            }
+
+        }
+
+        function makeNum() {
+
+            let num = prompt("숫자 입력!!");
+            let str = "";
+
+            for(let i = 0; i < num; i++) {
+                str += "<li>" + (i + 1) + "번째 list</li>";
+            }
+
+            // let list = document.querySelectorAll("#test");
+            // list.innerHTML = str;
+
+            document.querySelectorAll("#test").innerHTML = str;
+
+        }
+    </script>
+</body>
+</html>

@@ -4,8 +4,149 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>v2</title>
+    <style>
+        /* 전체 div에 적용될 스타일 */
+        div {
+            border: 1px solid red;
+            box-sizing: border-box;
+        }
+        /* 홈페이지의 가장 외부 틀 크기 지정 */
+        .wrap {
+            width: 1200px;
+            height: 900px;
+            margin: auto;
+        }
+        /* 각 섹션마다의 공통값 지정 */
+        .wrap>div {
+            width: 100%;
+            margin: 0.5%;
+        }
+        /* 각 섹션의 높이 지정 */
+        /* header */
+        #header {
+            height: 17%;
+        }
+        /* header_1, 2, 3 */
+        #header>div {
+            height: 100%;
+            float: left;
+        }
+        #header_1, #header_3 {
+            width: 20%;
+        }
+        /* header_1 */
+        #header_1 {
+            text-align: center;
+            padding-top: 50px;
+        }
+        #header_2 {
+            width: 60%;
+        }
+
+        /* navigator */
+        #navigator {
+            height: 5%;
+        }
+
+        /* content */
+        #content {
+            height: 56%;
+        }
+        /* content_1, 2 */
+        #content>div {
+            height: 100%;
+            float: left;
+        }
+        #content_1 {
+            width: 74.5%;
+            margin-right: 0.5%;
+        }
+        /* ad_1, 2, 3 */
+        #content_1>div {
+            width: 100%;
+        }
+        #ad_1 {
+            height: 29.5%;
+            margin-bottom: 0.5%;
+        }
+        #ad_2 {
+            height: 9%;
+            margin-bottom: 0.5%;
+        }
+        #ad_3 {
+            height: 60%;
+        }
+
+        #content_2 {
+            width: 24.5%;
+            margin-left: 0.5%;
+        }
+        /* login, store */
+        #content_2>div {
+            width: 100%;
+        }
+        #login {
+            height: 29%;
+            margin-bottom: 1%;
+        }
+        #store {
+            height: 70%;
+        }
+
+        /* footer */
+        #footer {
+            height: 22%;
+        }
+        
+
+    </style>
 </head>
 <body>
-    
+    <!-- 전체 div -->
+    <div class="wrap">
+
+        <!-- header div -->
+        <div id="header">
+            
+            <!-- 로고 -->
+            <div id="header_1">
+                <img src="image/logo.PNG">
+            </div>
+            <!-- 검색창 -->
+            <div id="header_2"></div>
+            <div id="header_3"></div>
+            
+        </div>
+
+        <!-- navigator div -->
+        <!-- 메뉴바 -->
+        <div id="navigator"></div>
+
+        <!-- content div -->
+        <div id="content">
+            <!-- 광고창 -->
+            <div id="content_1">
+                <!-- top -->
+                <div id="ad_1"></div>
+                <!-- middle(공지사항) -->
+                <div id="ad_2"></div>
+                <!-- bottom(자동차) -->
+                <div id="ad_3"></div>
+            </div>
+            <!-- 로그인 및 온라인스토어 -->
+            <div id="content_2">
+                <!-- 로그인 -->
+                <div id="login"></div>
+                <!-- 스토어 -->
+                <div id="store"></div>
+            </div>
+        </div>
+
+        <!-- footer div -->
+        <!-- 이용약관 및 카피라이터 -->
+        <div id="footer"></div>
+
+    </div>
+
 </body>
 </html>
