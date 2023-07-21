@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>0720복습용페이지</title>
     <style>
-        #box {
+        .box {
             border: 1px solid black;
             width: 400px;
             height: 200px;
@@ -14,12 +14,16 @@
 </head>
 <body>
     <h3>박스에 안에 문구 넣기</h3>
-    <div id="box"></div>
+    <div id="box" class="box"></div>
     <button id="btn" onclick="inputText();">눌루</button>
 
     <h3>입력한 숫자만큼의 리스트 생성</h3>
     <button onclick="makeNum();">숫자 생성기</button>
     <ol id="test"></ol>
+
+    <h3>문자열</h3>
+    <div id="area1" class="box"></div>
+    <button onclick="stringTest();">문자열</button>
 
     <script>
         function inputText() {
@@ -48,6 +52,22 @@
             // list.innerHTML = str;
 
             document.querySelectorAll("#test").innerHTML = str;
+
+        }
+
+        function stringTest() {
+
+            const area1 = document.querySelector("#area1");
+
+            let str1 = "Hello JavaScript";
+
+            area1.innerHTML = str1;
+
+            str1 = "사과, 복숭아, 키위";
+
+            area1.innerHTML = str1;
+
+            console.log(typeof(str1.split(",")));
 
         }
     </script>
