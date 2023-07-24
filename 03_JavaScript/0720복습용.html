@@ -48,10 +48,12 @@
                 str += "<li>" + (i + 1) + "번째 list</li>";
             }
 
-            // let list = document.querySelectorAll("#test");
-            // list.innerHTML = str;
+            let list = document.getElementById("test");
+            console.log(list);
+            alert(list.value);
+            list.innerHTML = str;
 
-            document.querySelectorAll("#test").innerHTML = str;
+            // document.querySelectorAll("#test").innerHTML = str;
 
         }
 
@@ -70,6 +72,108 @@
             console.log(typeof(str1.split(",")));
 
         }
+
+
     </script>
+
+    <h3>document.write('화면에 출력할 문구');</h3>
+    <button onclick="documentWrite(prompt('숫자 입력'));">화면에 출력</button>
+
+    <script>
+        function documentWrite(num) {
+
+            let sum = 0;
+
+            for(let i = 1; i <= num; i++) {
+                sum += i;
+            }
+
+            document.write(sum);
+
+        }
+    </script>
+
+    <h3>선택한 요소.innerHTML | innerText = "출력할 문구";</h3>
+    <div id="test2" class="box"></div>
+    <button onclick="btn(prompt('출력할 문구'));">출력</button>
+    
+    <script>
+        function btn(str) {
+
+            document.querySelector("#test2").innerHTML = str;
+
+        }
+    </script>
+
+    <h3>window.confirm("질문내용");</h3>
+    <button onclick="testConfirm();">Click me!!</button>
+
+    <script>
+        function testConfirm() {
+
+            let result = confirm("집에 가고 싶나요??");
+            let str = "";
+
+            if(result) {
+                str = "미치셨나요??";
+            }
+            else {
+                str = "좋은 자세입니당^^";
+            }
+
+            alert(str);
+
+        }
+    </script>
+
+    <h3>아이디로 접근</h3>
+
+    <div id="test3" class="box"></div>
+    <button onclick="accessById(prompt('변경하고자 하는 색 입력'));">Click</button>
+
+    <script>
+        function accessById(color) {
+
+            document.getElementById("test3").style.backgroundColor = color;
+
+        }
+    </script>
+
+    <h3>태그명으로 접근</h3>
+
+    <table border="1px">
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+        </tr>
+    </table>
+
+    <button onclick="accessByTag(prompt('접근할 태그명'), prompt('변경할 색깔'));">Click</button>
+
+    <script>
+        function accessByTag(tagName, color) {
+
+            let list = document.getElementsByTagName(tagName);
+
+            for(let i in list) {
+                list[i].style.backgroundColor = color;
+            }
+
+        }
+    </script>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 </body>
 </html>

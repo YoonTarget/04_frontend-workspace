@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 실습문제2</title>
+    <style>
+        #area, #area2 {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1>1. 색상 선택 후 변경 버튼을 클릭하면 색상이 변경되도록 만들어 보시오</h1>
+
+    <div id="area"></div>
+    <input type="color" id="color">
+    <button onclick="changeColor();">변경</button>
+
+    <script>
+        function changeColor() {
+
+            var color = document.getElementById("color").value;
+
+            console.log(color);
+
+            document.getElementById("area").style.backgroundColor = color;
+
+        }
+    </script>
+
+    <h1>2. 버튼에 따라 크기 조절이 가능하게 만들기</h1>
+
+    <div id="area2"></div>
+
+    <button onclick="size('s');">50X50</button>
+    <button onclick="size('o');">원본(100X100)</button>
+    <button onclick="size('l');">200X200</button>
+
+    
+
+    <script>
+
+        var area2 = document.getElementById("area2").style;
+
+        function size(value) {
+
+            // if(value == 's') {
+            //     area2.width = "50px";
+            //     area2.height = "50px";
+            // }
+            // else if(value == 'o') {
+            //     area2.width = "100px";
+            //     area2.height = "100px";
+            // }
+            // else {
+            //     area2.width = "200px";
+            //     area2.height = "200px";
+            // }
+
+            switch(value) {
+            case 's' :
+                area2.width = "50px";
+                area2.height = "50px";
+                break;
+            case 'l' :
+                area2.width = "200px";
+                area2.height = "200px";
+                break;
+            default :
+                area2.width = "100px";
+                area2.height = "100px";
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 실습문제1</title>
+</head>
+<body>
+    <h1>행 열 각각 입력받아 테이블 만들기</h1>
+    <h3>힌트 : 반복문은 자바랑 같습니다. 다만! 변수만 var 데이터형이라는 걸 기억해주세요.</h3>
+    <button onclick="tablePrompt();">테이블 생성</button>
+    <table id="area"></table>
+
+    <h1>행 열을 각각 입력받아서 새화면에서 출력하기</h1>
+    <h3>힌트 : document.write()를 이용하여 표를 출력하면 됩니다.</h3>
+    <button onclick="tableWrite();">테이블 새화면 생성</button>
+    <div id="area2"></div>
+
+    <script>
+
+        function tablePrompt() {
+
+            var row = prompt("몇 행을 추가하시겠습니까?");
+            var column = prompt("몇 열을 추가하시겠습니까?");
+
+            var area = document.getElementById("area");
+            area.border = "1px";
+            area.style.width = "100px";
+            area.style.height = "100px";
+            var str = "";
+            var str2 = "";
+
+            for(var j = 1; j <= row; j++) {
+                for(var i = 1; i <= column; i++) {
+                    str += "<td></td>";
+                }
+                str2 += "<tr>" + str + "</tr>";
+                str = "";
+            }
+
+            area.innerHTML = str2;
+            
+        }
+
+        function tableWrite() {
+
+            var row = prompt("몇 행을 추가하시겠습니까?");
+            var column = prompt("몇 열을 추가하시겠습니까?");
+
+            var area2 = document.getElementById("area2");
+            var str = "";
+            var str2 = "";
+            var count = 1;
+
+            for(var j = 0; j < row; j++) {
+                for(var i = 1; i <= column; i++) {
+                    str += "<td>" + (count++) + "</td>";
+                }
+                str2 += "<tr>" + str + "</tr>";
+                str = "";
+            }
+
+           document.write("<table border = '1px'>" + str2 + "</table>");
+
+        }
+    </script>
+</body>
+</html>

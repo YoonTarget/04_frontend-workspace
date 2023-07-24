@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 실습문제3</title>
+    <style>
+        #area {
+            width: 400px;
+            height: 200px;
+            border: 1px solid black;
+            background-color: rgb(233, 199, 155);
+        }
+    </style>
+</head>
+<body>
+    <h1>HTML 태그에 접근 테스트</h1>
+
+    <p>단, 구매자는 태그 이름으로 접근, 상품명은 아이디로 접근, 구매가격은 name 값으로 접근할 것</p>
+
+    구매자 :
+    <input type="text" placeholder="구매자의 이름을 입력하세요"><br><br>
+
+    상품명 :
+    <input type="text" id="product" placeholder="구매 상품명을 입력하세요"><br><br>
+
+    가격 :
+    <input type="text" id="price" name="productPrice" placeholder="구매 가격을 입력하세요"><br><br>
+
+    <button onclick="output();">입력값 출력하기</button>
+
+    <div id="area"></div>
+
+    <script>
+        function output() {
+
+            var area = document.getElementById("area");
+
+            var buyer = document.getElementsByTagName("input");
+
+            var product = document.getElementById("product");
+
+            var price = document.getElementsByName("productPrice");
+        
+            area.innerHTML = "구입자 : " + buyer[0].value + "<br>";
+            area.innerHTML += "구입상품 : " + product.value + "<br>"; 
+            area.innerHTML += "구매가격 : " + price[0].value + "원<br>";
+        }
+    </script>
+
+</body>
+</html>
