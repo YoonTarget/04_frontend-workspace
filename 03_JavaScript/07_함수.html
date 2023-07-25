@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>함수</title>
+    <title>JavaScript_함수</title>
     <style>
         .area {
             border: 1px solid black;
@@ -93,6 +93,114 @@
     <script>
         function test2(value) { // 매개변수 제시시 자료형 지정 x, 선언구문 x => 변수명만
             document.getElementById("area3").innerHTML = value;
+        }
+    </script>
+
+    <br>
+
+    <h3>* 매개변수 관련 arguments 배열</h3>
+
+    <p>
+        함수 호출시 전달되는 값은 내부적으로 arguments 배열에 담김 <br>
+        * arguments : 모든 함수마다 내부적으로 하나씩 존재하는 배열 객체
+    </p>
+
+    <button onclick="test3(11, 12, 1, 5, 7);">실행확인</button>
+    <div id="area4" class="area"></div>
+
+    <script>
+        function test3() {
+
+            console.log(arguments);
+            console.log(arguments[0]);
+
+            const area4 = document.getElementById("area4");
+
+            let sum = 0;
+
+            for(let i = 0; i < arguments.length; i++) {
+                sum += arguments[i];
+            }
+
+            area4.innerHTML += "총합 : " + sum + "<br>";
+            area4.innerHTML += "평균 : " + sum / arguments.length + "<br>";
+
+        }
+    </script>
+
+    <br>
+
+    <h3>* 매개변수에 this 관련 전달하기</h3>
+    
+    <!-- this : 현재 요소객체 -->
+    <button onclick="test4(this);">버튼1</button>
+    <button onclick="test4(this.innerHTML)">버튼2</button>
+    <input type="button" value="버튼3" onclick="test4(this.value);">
+    <button id="btn4" onclick="test4(this.id);">버튼4</button>
+
+    <script>
+        function test4(a) {
+
+            console.log(a);
+
+        }
+    </script>
+
+    <br><br>
+
+    <button onclick="test5(this);">클릭</button>
+
+    <script>
+        function test5(el) {
+            console.dir(el);
+            el.style.backgroundColor = "red";
+            el.innerHTML = "클릭됨";
+
+        }
+    </script>
+
+    <hr>
+
+    <h2>함수의 리턴</h2>
+
+    <h3>* 일반적인 값 리턴</h3>
+
+    <button onclick="test6();">실행확인</button>
+
+    <div id="area5" class="area"></div>
+
+    <script>
+        // 1~100 사이의 숫자 중 랜덤값 구해서 반환해주는 함수
+        function ran() {
+
+            const random = parseInt(Math.random() * 100 + 1);
+            return random;
+
+        }
+
+        function test6() {
+
+            const area5 = document.getElementById("area5");
+            area5.innerHTML += "랜덤값 : " + ran() + "<br>";
+
+        }
+    </script>
+
+    <br>
+
+    <h3>* 익명함수를 리턴</h3>
+    이름 : <input type="text" id="userName">
+    <button onclick="test7()();">실행확인</button>
+
+    <script>
+        function test7() {
+
+            let inputEl = document.getElementById("userName");
+            // console.log(inputEl.value);
+            return function() {
+                alert(inputEl.value);
+            }
+
         }
     </script>
 

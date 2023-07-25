@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript_실습문제7</title>
+</head>
+<body>
+    <h1>배열 실습 문제2</h1>
+    
+    <fieldset>
+        <legend>보기</legend>
+        <div id="area1">r b</div>
+        <div id="area2">e v o l</div>
+    </fieldset>
+    <input type="text">
+    <button onclick="reverse();">처리</button>
+
+    <script>
+        function reverse() {
+            
+            const arr1 = document.getElementById("area1").innerHTML.split(" ").reverse();
+            // console.log(arr1);
+            const arr2 = document.getElementById("area2").innerHTML.split(" ").reverse();
+
+            const result = arr1.concat(arr2).join("");
+
+            document.getElementsByTagName("input")[0].value = result;
+            
+        }
+    </script>
+</body>
+</html>

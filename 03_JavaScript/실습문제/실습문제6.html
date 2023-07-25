@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript_실습문제6</title>
+</head>
+<body>
+    <h1>배열 실습 문제1</h1>
+
+    <fieldset>
+        <legend>보기</legend>
+        <div id="area1">사과,바나나,당근</div>
+        <div id="area2">김밥,치즈,떡볶이,햄버거</div>
+        <div id="area3">환타,사이다,콜라</div>
+        <div id="area4">고양이,강아지</div>
+    </fieldset>
+    <input type="text" id="choice"> <br>
+    <button onclick="index();">전송 및 처리</button>
+
+    <script>
+        function index() {
+
+            const choice = document.getElementById("choice").value;
+
+            const arr = document.getElementById("area1").innerHTML.split(",").concat(
+                          document.getElementById("area2").innerHTML.split(",")
+                        , document.getElementById("area3").innerHTML.split(",")
+                        , document.getElementById("area4").innerHTML.split(","));
+
+            // console.log(choice);
+            console.log(arr);
+            // console.log(arr.indexOf(choice));
+
+            const result = choice + "은(는) 배열 index " + arr.indexOf(choice) + "번째에 존재합니다.";
+
+            alert(result);
+
+        }
+    </script>
+</body>
+</html>

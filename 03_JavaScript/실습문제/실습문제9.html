@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript_실습문제9</title>
+    <style>
+        #result {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <h1>배열 실습 문제4</h1>
+
+    <fieldset>
+        <legend>보기</legend>
+        <div id="area1">피자 치킨 당근 햄버거 떡볶이</div>
+    </fieldset>
+    <input type="text" id="delete" placeholder="삭제할 음식 이름을 입력하세요">
+    <input type="text" id="insert" placeholder="추가할 음식이름을 입력하세요">
+    <br>
+    <input type="text" id="result" size="50" placeholder="이 부분에 정답이 출력될 수 있도록 하세요">
+    <br>
+    <button onclick="deleteInsert();">처리 및 출력</button>
+
+    <script>
+        function deleteInsert() {
+
+            let arr = document.getElementById("area1").innerHTML.split(" ");
+            // console.log(arr);
+
+            const deleteFood = "" + document.getElementById("delete").value;
+            const insertFood = "" + document.getElementById("insert").value;
+
+            // console.log(deleteFood);
+            // console.log(insertFood);
+
+            // console.log(arr.indexOf(deleteFood));
+
+            arr.splice(arr.indexOf(deleteFood), 1, insertFood);
+            
+            // console.log(arr);
+
+            // console.log(result);
+
+            document.getElementById("result").value = arr;
+
+        }
+    </script>
+</body>
+</html>

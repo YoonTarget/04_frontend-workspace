@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript_실습문제8</title>
+</head>
+<body>
+    <h1>배열 실습 문제3</h1>
+
+    <fieldset>
+        <legend>입력</legend>
+        <input type="text" id="inputValue">
+        <button onclick="food();">입력</button>
+    </fieldset>
+    <input type="text" id="outputValue">
+
+    <script>
+
+        let arr1 = [];
+
+        function food() {
+
+            let arr2 = [document.getElementById("inputValue").value];
+
+            arr1 = arr1.concat(arr2);
+
+            document.getElementById("outputValue").value = arr1;
+
+        }
+    </script>
+</body>
+</html>
