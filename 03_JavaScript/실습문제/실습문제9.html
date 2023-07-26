@@ -25,26 +25,34 @@
     <button onclick="deleteInsert();">처리 및 출력</button>
 
     <script>
-        function deleteInsert() {
+        
+        let arr1 = [];
 
-            let arr = document.getElementById("area1").innerHTML.split(" ");
-            // console.log(arr);
+        let arr2 = document.getElementById("area1").innerHTML.split(" ");
+
+        function deleteInsert() {
 
             const deleteFood = "" + document.getElementById("delete").value;
             const insertFood = "" + document.getElementById("insert").value;
+
+            // console.log(arr2);
 
             // console.log(deleteFood);
             // console.log(insertFood);
 
             // console.log(arr.indexOf(deleteFood));
 
-            arr.splice(arr.indexOf(deleteFood), 1, insertFood);
-            
-            // console.log(arr);
+            arr2.splice(arr2.indexOf(deleteFood), 1, insertFood);
+
+            // console.log(arr2.concat(arr1));
+
+            // console.log(arr1);
 
             // console.log(result);
 
-            document.getElementById("result").value = arr;
+            // console.log(arr2);
+
+            document.getElementById("result").value = arr1.concat(arr2);
 
         }
     </script>
