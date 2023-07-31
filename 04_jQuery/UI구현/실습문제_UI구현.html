@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[NCS전공교과]UI구현</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <style>
+        div {
+            color: gray;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>회원가입</legend>
+        <form action="test.do">
+            <table>
+                <tr>
+                    <td>아이디</td>
+                    <td>
+                        <input type="text" id="userId" name="userId" required><br>
+                        <div class="requiredOption"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>패스워드</td>
+                    <td>
+                        <input type="password" id="userPwd" name="userPwd" required onclick="return announce();"> <br>
+                        <div id="announce"></div>
+                        <div class="requiredOption"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>패스워드 확인</td>
+                    <td>
+                        <input type="password" id="checkPwd" name="checkPwd" required><br>
+                        <div class="requiredOption"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>이메일</td>
+                    <td><input type="email" id="email" name="email" onclick="requiredOption();"></td>
+                </tr>
+                <tr>
+                    <td>주소</td>
+                    <td><input type="text" id="address" name="address" onclick="requiredOption();"></td>
+                </tr>
+            </table>
+    
+            <br>
+    
+            <input type="submit" value="가입" onclick="return validate();">
+    
+        </form>
+    </fieldset>
+
+    <script>
+
+        function announce() {
+
+            const announce = document.getElementById("announce");
+
+            if(announce.innerHTML == "") {
+                announce.innerHTML = "영문자 대/소문자, 특수문자, 숫자 포함 8 ~ 32자";
+            }
+
+        }
+
+        function requiredOption() {
+
+            const userId = document.getElementById("userId");
+            const userPwd = document.getElementById("userPwd");
+            const checkPwd = document.getElementById("checkPwd");
+
+            if(userId.value == "") {
+                document.getElementsByClassName("requiredOption")[0].innerHTML = "필수 입력 항목입니다.";
+            }
+
+            if(userPwd.value == "") {
+                document.getElementsByClassName("requiredOption")[1].innerHTML = "필수 입력 항목입니다.";
+            }
+
+            if(checkPwd.value == "") {
+                document.getElementsByClassName("requiredOption")[2].innerHTML = "필수 입력 항목입니다.";
+            }
+
+        }
+
+        // function validate() {
+
+            // console.log("hihi");
+
+            // const idInput = $("#userId");
+            // const pwdInput1 = $("#userPwd");
+            // const pwdInput2 = $("#checkPwd");
+
+            // let regExp = /^[a-z\d!@#$%^&*]{8,32}$/i;
+
+            // if(!regExp.test(idInput.val())) {
+            //     alert("유효한 아이디 형식이 아닙니다.");
+            //     idInput.select();
+            //     return false;
+            // }
+
+        // }
+
+        // $(function() {
+
+        //     $("#userPwd").click(function() {
+        //         $(this).after("<br><label style='color:gray; font-size:12px'>영문자 대/소문자, 특수문자, 숫자 포함 8 ~ 32자</label>");
+        //     });
+
+        // });
+
+    </script>
+
+</body>
+</html>
