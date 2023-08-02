@@ -6,113 +6,165 @@
     <title>[NCS전공교과]UI구현</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <style>
-        div {
+        .requiredOption, #announcePwd {
             color: gray;
             font-size: 12px;
+        }
+        input {
+            border-style: none none dotted none;
+            background-color: rgb(236, 230, 230);
+        }
+        th {
+            text-align: left;
+            color: black;
+            font-size: 15px;
+        }
+        #signUp {
+            width: 800px;
+            height: 700px;
+            background-color: rgb(190, 207, 241);
+            position: relative;
+        }
+        #signUp>table {
+            border: 1px solid rgb(151, 148, 148);
+            width: 400px;
+            height: 500px;
+            background-color: rgb(236, 230, 230);
+            position: absolute;
+            top: 15%;
+            left: 25%;
+            padding: 10px;
+        }
+        #btn {
+            text-align: center;
+            background-color: rgb(132, 197, 132);
+        }
+        #btn>input {
+            background-color: rgb(132, 197, 132);
+            border-bottom: none;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
-    <fieldset>
-        <legend>회원가입</legend>
-        <form action="test.do">
-            <table>
-                <tr>
-                    <td>아이디</td>
-                    <td>
-                        <input type="text" id="userId" name="userId" required><br>
-                        <div class="requiredOption"></div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>패스워드</td>
-                    <td>
-                        <input type="password" id="userPwd" name="userPwd" required onclick="return announce();"> <br>
-                        <div id="announce"></div>
-                        <div class="requiredOption"></div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>패스워드 확인</td>
-                    <td>
-                        <input type="password" id="checkPwd" name="checkPwd" required><br>
-                        <div class="requiredOption"></div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>이메일</td>
-                    <td><input type="email" id="email" name="email" onclick="requiredOption();"></td>
-                </tr>
-                <tr>
-                    <td>주소</td>
-                    <td><input type="text" id="address" name="address" onclick="requiredOption();"></td>
-                </tr>
-            </table>
-    
-            <br>
-    
-            <input type="submit" value="가입" onclick="return validate();">
-    
-        </form>
-    </fieldset>
+    <form id="signUp" action="test.do">
+        <table>
+            <tr>
+                <th>아이디</th>
+                <td>
+                    <input type="text" id="userId" name="userId" required size="30px"><br>
+                    <div class="requiredOption"></div>
+                </td>
+            </tr>
+            <tr>
+                <th>패스워드</th>
+                <td>
+                    <input type="password" id="userPwd" name="userPwd" required size="30px" onclick="announce();"> <br>
+                    <div id="announcePwd"></div>
+                    <div class="requiredOption"></div>
+                </td>
+            </tr>
+            <tr>
+                <th>패스워드 확인</th>
+                <td>
+                    <input type="password" id="checkPwd" name="checkPwd" required size="30px"><br>
+                    <div class="requiredOption"></div>
+                </td>
+            </tr>
+            <tr>
+                <th>이메일</th>
+                <td>
+                    <input type="text" id="email1" name="email" size="11px" onclick="option();"> @
+                    <input type="text" id="email2" name="email" size="11px" onclick="option();">
+                </td>
+            </tr>
+            <tr>
+                <th>주소</th>
+                <td>
+                    <input type="text" id="address" name="address" size="30px" onclick="option();"><br><br>
+                    <input type="text" id="address" name="address" size="30px" onclick="option();">
+                </td>
+            </tr>
+            <tr>
+                <th id="btn" colspan="2">
+                    <input type="submit" value="가 입" onclick="return validate();">
+                </th>
+            </tr>
+        </table>
+
+    </form>
 
     <script>
 
         function announce() {
 
-            const announce = document.getElementById("announce");
+            const announcePwd = document.getElementById("announcePwd");
 
-            if(announce.innerHTML == "") {
-                announce.innerHTML = "영문자 대/소문자, 특수문자, 숫자 포함 8 ~ 32자";
+            if(announcePwd.innerHTML == "") {
+                announcePwd.innerHTML = "영문자 대/소문자, 특수문자, 숫자 포함 8 ~ 32자";
             }
 
         }
 
-        function requiredOption() {
+        function option() {
 
             const userId = document.getElementById("userId");
             const userPwd = document.getElementById("userPwd");
             const checkPwd = document.getElementById("checkPwd");
 
+            const requiredOption = document.getElementsByClassName("requiredOption");
+            const str = "필수 입력 항목입니다.";
+
             if(userId.value == "") {
-                document.getElementsByClassName("requiredOption")[0].innerHTML = "필수 입력 항목입니다.";
+                requiredOption[0].innerHTML = str;
+            }
+            else{
+                requiredOption[0].innerHTML = "";
             }
 
             if(userPwd.value == "") {
-                document.getElementsByClassName("requiredOption")[1].innerHTML = "필수 입력 항목입니다.";
+                requiredOption[1].innerHTML = str;
+            }
+            else{
+                requiredOption[1].innerHTML = "";
             }
 
             if(checkPwd.value == "") {
-                document.getElementsByClassName("requiredOption")[2].innerHTML = "필수 입력 항목입니다.";
+                requiredOption[2].innerHTML = str;
+            }
+            else{
+                requiredOption[2].innerHTML = "";
             }
 
         }
 
-        // function validate() {
+        function validate() {
 
             // console.log("hihi");
 
-            // const idInput = $("#userId");
-            // const pwdInput1 = $("#userPwd");
-            // const pwdInput2 = $("#checkPwd");
+            let regExp = /^[a-z\d!@#$%^&*]{8,32}$/i;
 
-            // let regExp = /^[a-z\d!@#$%^&*]{8,32}$/i;
+            if(!regExp.test($("#userPwd").val())) {
 
-            // if(!regExp.test(idInput.val())) {
-            //     alert("유효한 아이디 형식이 아닙니다.");
-            //     idInput.select();
-            //     return false;
-            // }
+                alert("유효한 비밀번호 형식이 아닙니다.");
 
-        // }
+                $("#userPwd").val("").focus();
 
-        // $(function() {
+                return false;
 
-        //     $("#userPwd").click(function() {
-        //         $(this).after("<br><label style='color:gray; font-size:12px'>영문자 대/소문자, 특수문자, 숫자 포함 8 ~ 32자</label>");
-        //     });
+            }
 
-        // });
+            if($("#userPwd").val() != $("#checkPwd").val()) {
+
+                alert("비밀번호가 일치하지 않습니다.");
+
+                $("#checkPwd").val("").focus();
+
+                return false;
+
+            }
+
+        }
 
     </script>
 

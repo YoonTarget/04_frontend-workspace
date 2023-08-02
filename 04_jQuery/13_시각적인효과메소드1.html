@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery_시각적인 효과 메소드1</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+</head>
+<body>
+    <h1>시각적인 효과 (Effect)</h1>
+    <p>페이지 내에서 애니메이션 효과를 주기 위해 사용되는 메소드 집합</p>
+
+    <h3>* show()와 hide(), toggle()</h3>
+    <p>선택된 요소가 점점 커지면서 보여지고, 점점 작아지면서 사라지게 하는 메소드</p>
+
+    <button id="hide">숨기기</button>
+    <button id="show">보여주기</button>
+    <button id="toggle">토글</button>
+
+    <br><br>
+
+    <!-- <img src="../02_CSS3/resources/image/city1.PNG"> -->
+    <!-- <img id="jjanggu" src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA2MTlfOSAg%2FMDAxNjg3MTAxMDEyMzkz.DmS5Y7_dd4Tj5LtEQOyxzteWF7ndOxoIUdhGxQtcnrYg.vTmHsNJcdQD-bS_xrFPV7FA7cmvSIDSgDG1D64e3m4Ug.PNG.salgudoll%2Fp1.png&type=sc960_832"> -->
+    <!-- <img id="gamst" src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjExMDFfMjM4%2FMDAxNjY3MzAxNzE3NjMx.WTsRjZLM3G2rsdCXWjhypw03A82otwuPV2JxKT7lCLkg.km6vvnGpFC3Ihvt7-AsPOp9hGEid5J31mFLhhXbk8tgg.JPEG.cwmylee%2FIMG_5029.JPG&type=sc960_832"> -->
+
+
+    <script>
+
+        $(function() {
+
+            $("#hide").click(function() {
+
+                // $("#jjanggu").hide();
+                $("#gamst").hide(3000);
+
+            });
+
+            $("#show").click(function() {
+
+                // $("#jjanggu").show();
+                $("#gamst").show(3000);
+
+            });
+
+            $("#toggle").click(function() {
+
+                $("#gamst").toggle();
+
+            });
+
+        });
+
+    </script>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

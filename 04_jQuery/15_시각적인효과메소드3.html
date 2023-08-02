@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery_시각적인 효과 메소드3</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <style>
+        div {
+            background-color: beige;
+            border: 1px solid yellow;
+            width: 300px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        p {
+            border: 1px solid lightgray;
+            width: 300px;
+            height: 100px;
+            border-radius: 10px;
+            margin-top: 5px;
+            padding: 10px;
+            box-sizing: border-box;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h3>* slideDown()과 slideUp()</h3>
+
+    <div>Q. 반품 언제 되나요?</div>
+    <p>A. 지금 확인 중입니다.</p>
+
+    <div>Q. 상품 위치를 알고 싶습니다.</div>
+    <p>A. 배송 조회 해보세요. 님 핑프심??</p>
+
+    <div>Q. 8XL 사이즈도 있나요?</div>
+    <p>A. 있을걸요,,??</p>
+
+    <div>Q. 판매자가 연락이 안돼요,,ㅠㅠ</div>
+    <p>A. 아이고,,</p>
+
+    <div>Q. 하이하이</div>
+    <p>A. 바이바이</p>
+
+    <script>
+
+        $(function() {
+
+            $("div").click(function() {
+
+                // $(this) : 클릭 이벤트가 발생한 div 요소
+                // 우리는 그 요소의 뒤의 요소를 선택해야함. (같은 레벨에 있음)
+
+                // $(this).next() : 클릭 이벤트가 발생한 div 요소 바로 뒤에 있는 p 요소
+                // 보여지는 상태면 사라지게, 안 보이면 나타나게
+
+                const $p = $(this).next(); // jQuery 방식으로 선택된 요소를 담아둘 때의 변수명
+
+                if($p.css("display") == "none") {
+
+                    // 기존 꺼는 닫히면서 지금 꺼만 열리게
+                    $(this).siblings("p").slideUp();
+
+                    // 보여지게끔
+                    // $p.css("display", "block");
+                    $p.slideDown();
+                }
+                else {
+                    $p.slideUp();
+                }
+
+            });
+
+        });
+
+    </script>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery_시각적인 효과 메소드2</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+</head>
+<body>
+    <h3>* fadeIn()과 fadeOut, fadeToggle()</h3>
+    <p style="background-color: red; opacity: 0.5;">선택된 요소가 점점 투명해지면서 사라지고 점점 선명해지면서 보여지게 해주는 메소드</p>
+
+    <button onclick="test1();">숨기기</button>
+    <button onclick="test2();">보여주기</button>
+    <button onclick="test3();">토글</button>
+
+    <br><br>
+
+    <img id="jjanggu" src="https://mblogthumb-phinf.pstatic.net/MjAyMTA0MDJfNDEg/MDAxNjE3MzQ3NzU1NTM5.qr3Ipqy9t7uZhEUChfW2qH2OGW585MOunAKXMVo9Rlsg.i3RVAgb6oLkYJ4Ecf9bKkGrc4YvD_pVQSudgufztLwcg.JPEG.se413496/FB%EF%BC%BFIMG%EF%BC%BF1601135127842.jpg?type=w800">
+    <!-- <img id="jjanggu" src="https://mblogthumb-phinf.pstatic.net/MjAyMTA0MDJfNDEg/MDAxNjE3MzQ3NzU1NTM5.qr3Ipqy9t7uZhEUChfW2qH2OGW585MOunAKXMVo9Rlsg.i3RVAgb6oLkYJ4Ecf9bKkGrc4YvD_pVQSudgufztLwcg.JPEG.se413496/FB%EF%BC%BFIMG%EF%BC%BF1601135127842.jpg?type=w800"> -->
+
+    <script>
+
+        function test1() {
+
+            $("#jjanggu").fadeOut(2000);
+
+        }
+
+        function test2() {
+
+            $("#jjanggu").fadeIn(2000);
+
+        }
+
+        function test3() {
+
+            $("#jjanggu").fadeToggle(2000);
+
+        }
+
+    </script>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
