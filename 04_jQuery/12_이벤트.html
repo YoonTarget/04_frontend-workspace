@@ -242,11 +242,7 @@
             $("#content").keydown(function() {
 
                 let length = $(this).val().length;
-                $("#count").text(length);
-
-                if(length <= 150) {
-                    $("#count").text(length);
-                }
+                let count = $("#count").text(length);
 
             });
 

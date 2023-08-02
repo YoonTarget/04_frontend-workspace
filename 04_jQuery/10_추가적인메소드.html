@@ -96,6 +96,13 @@
                 console.log("속성명 : " + key + ", 속성값 : " + value);
             });
 
+            console.log("======================================");
+
+            // 3) each2 메소드 사용
+            $(student).each(function(key, value) {
+                console.log("속성명 : " + key + ", 속성값 : " + value);
+            });
+
             $("#btn").click(function() {
                 // db로 조회했다는 가정하에
                 const students = [{name:"문동은", age:20, address:"서울"},
@@ -103,7 +110,7 @@
                                   {name:"전재준", age:20, address:"광주"}];
 
                 let result = "";
-                $.each(students, function(index, obj) {
+                $(students).each(function(index, obj) {
                     result += "<tr>"
                             + "<td>" + obj.name + "</td>"
                             + "<td>" + obj.age + "</td>"
